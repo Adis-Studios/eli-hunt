@@ -14,20 +14,45 @@
 
     <input type="text" id="codeInput" placeholder="Enter code here">
 
-    <div id="hiddenBox" style="display: none;">
-        <textarea rows="4" cols="50" placeholder="Congratulations! You found the hidden textbox."></textarea>
+    <div id="hiddenBoxes">
+        <div class="hiddenBox" style="display: none;">
+            <textarea rows="4" cols="50" placeholder="Congratulations! You found the first hidden textbox."></textarea>
+            <input type="text" class="nextCode" placeholder="Enter next code here">
+        </div>
+        <div class="hiddenBox" style="display: none;">
+            <textarea rows="4" cols="50" placeholder="Congratulations! You found the second hidden textbox."></textarea>
+            <input type="text" class="nextCode" placeholder="Enter next code here">
+        </div>
+        <div class="hiddenBox" style="display: none;">
+            <textarea rows="4" cols="50" placeholder="Congratulations! You found the third hidden textbox."></textarea>
+            <input type="text" class="nextCode" placeholder="Enter next code here">
+        </div>
+        <div class="hiddenBox" style="display: none;">
+            <textarea rows="4" cols="50" placeholder="Congratulations! You found the fourth hidden textbox."></textarea>
+            <input type="text" class="nextCode" placeholder="Enter next code here">
+        </div>
+        <div class="hiddenBox" style="display: none;">
+            <textarea rows="4" cols="50" placeholder="Congratulations! You found the fifth hidden textbox."></textarea>
+        </div>
     </div>
 
     <script>
         const codeInput = document.getElementById('codeInput');
-        const hiddenBox = document.getElementById('hiddenBox');
+        const hiddenBoxes = document.querySelectorAll('.hiddenBox');
+        const nextCodes = document.querySelectorAll('.nextCode');
 
         codeInput.addEventListener('input', function() {
-            if (codeInput.value === 'opera') { // Change 'opera' to your secret code
-                hiddenBox.style.display = 'block';
-            } else {
-                hiddenBox.style.display = 'none';
+            if (codeInput.value === 'firstcode') { // Change 'firstcode' to your first secret code
+                hiddenBoxes[0].style.display = 'block';
             }
+        });
+
+        nextCodes.forEach((code, index) => {
+            code.addEventListener('input', function() {
+                if (code.value === `code${index + 1}`) {
+                    hiddenBoxes[index + 1].style.display = 'block';
+                }
+            });
         });
     </script>
 </body>
