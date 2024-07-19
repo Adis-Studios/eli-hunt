@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step-by-Step Input Validation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Secret Code Challenge</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="input-container" id="input-container-1">
-            <label for="input-1">Enter Message 1:</label>
-            <input type="text" id="input-1">
-            <button onclick="checkInput(1)">Submit</button>
-        </div>
-        <div class="input-container" id="input-container-2" style="display:none;">
-            <label for="input-2">Enter Message 2:</label>
-            <input type="text" id="input-2">
-            <button onclick="checkInput(2)">Submit</button>
-        </div>
-        <div class="input-container" id="input-container-3" style="display:none;">
-            <label for="input-3">Enter Message 3:</label>
-            <input type="text" id="input-3">
-            <button onclick="checkInput(3)">Submit</button>
-        </div>
-        <div class="input-container" id="input-container-4" style="display:none;">
-            <label for="input-4">Enter Message 4:</label>
-            <input type="text" id="input-4">
-            <button onclick="checkInput(4)">Submit</button>
-        </div>
-        <div class="input-container" id="input-container-5" style="display:none;">
-            <label for="input-5">Enter Message 5:</label>
-            <input type="text" id="input-5">
-            <button onclick="checkInput(5)">Submit</button>
-        </div>
+    <h1>Welcome to the Secret Code Challenge!</h1>
+    <p>Type the correct code to reveal the hidden textbox.</p>
+
+    <input type="text" id="codeInput" placeholder="Enter code here">
+
+    <div id="hiddenBox" style="display: none;">
+        <textarea rows="4" cols="50" placeholder="Congratulations! You found the hidden textbox."></textarea>
     </div>
-    <script src="scripts.js"></script>
+
+    <script>
+        const codeInput = document.getElementById('codeInput');
+        const hiddenBox = document.getElementById('hiddenBox');
+
+        codeInput.addEventListener('input', function() {
+            if (codeInput.value === 'opera') { // Change 'opera' to your secret code
+                hiddenBox.style.display = 'block';
+            } else {
+                hiddenBox.style.display = 'none';
+            }
+        });
+    </script>
 </body>
+
 </html>
