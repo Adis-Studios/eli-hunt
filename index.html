@@ -50,12 +50,13 @@
 <body>
     <h1>Rebelaton lore hunt</h1>
     <p>Typing the correct answer will show you the next clue.</p>
-
-    <input type="text" id="codeInput" placeholder="Ever seen that fish somehwere else before? Perhaps in a cryptic cartoon or journal?">
+    <p>(Start at the yt banner art.)</p>
+    <p>Where have you seen tah fish before? Maybe it's your key to undestanding how to read those symbols.</p>
+    <input type="text" id="codeInput" placeholder="">
 
     <div id="hiddenBoxes">
         <div class="hiddenBox">
-            <p></p>
+            <p>What was the preist also?</p>
             <input type="text" class="nextCode" placeholder="Enter next code here">
         </div>
         <div class="hiddenBox">
@@ -80,7 +81,7 @@
     const hiddenBoxes = document.querySelectorAll('.hiddenBox');
     const nextCodes = document.querySelectorAll('.nextCode');
 
-    const secretCodes = ['priest', 'secondcode', 'thirdcode', 'fourthcode', 'fifthcode']; // Custom secret codes for each input
+    const secretCodes = ['priest', 'secondcode', 'judge', 'fourthcode', 'fifthcode']; // Custom secret codes for each input
 
     codeInput.addEventListener('input', function() {
         if (codeInput.value === secretCodes[0]) {
