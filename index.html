@@ -13,13 +13,17 @@
   <p id="message2" style="display: none;">You got it! Here's the final code:</p>
 
   <script>
-    const codes = ["code1", "code2", "code3", "code4", "code5"]; // Replace with your desired codes
-
+    const codes = ["code1", "code2", "code3", "code4", "code5"]; // Replace with your desired code
+    
     function checkAnswer(level) {
       const input = document.getElementById("input" + level).value;
       const correctAnswer = codes[level - 1];
-
+    
+      console.log("Input:", input); // Check if input is being captured correctly
+      console.log("Correct Answer:", correctAnswer); // Check if correct answer is correct
+    
       if (input === correctAnswer) {
+        console.log("Correct answer entered!"); // Check if this message appears
         document.getElementById("message" + level).style.display = "block";
         if (level < codes.length) {
           document.getElementById("input" + (level + 1)).style.display = "block";
@@ -33,6 +37,7 @@
         alert("Incorrect code.");
       }
     }
+
   </script>
 </body>
 </html>
