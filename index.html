@@ -48,14 +48,14 @@
 </head>
 
 <body>
-    <h1>Welcome to the Hacker Challenge!</h1>
-    <p>Type the correct code to reveal the hidden textbox.</p>
+    <h1>Rebelaton lore hunt</h1>
+    <p>Typing the correct answer will show you the next clue.</p>
 
-    <input type="text" id="codeInput" placeholder="Enter code here">
+    <input type="text" id="codeInput" placeholder="Ever seen that fish somehwere else before? Perhaps in a cryptic cartoon or journal?">
 
     <div id="hiddenBoxes">
         <div class="hiddenBox">
-            <textarea rows="4" cols="50" placeholder="Congratulations! You found the first hidden textbox."></textarea>
+            <p></p>
             <input type="text" class="nextCode" placeholder="Enter next code here">
         </div>
         <div class="hiddenBox">
@@ -76,24 +76,27 @@
     </div>
 
     <script>
-        const codeInput = document.getElementById('codeInput');
-        const hiddenBoxes = document.querySelectorAll('.hiddenBox');
-        const nextCodes = document.querySelectorAll('.nextCode');
+    const codeInput = document.getElementById('codeInput');
+    const hiddenBoxes = document.querySelectorAll('.hiddenBox');
+    const nextCodes = document.querySelectorAll('.nextCode');
 
-        codeInput.addEventListener('input', function() {
-            if (codeInput.value === 'firstcode') { // Change 'firstcode' to your first secret code
-                hiddenBoxes[0].style.display = 'block';
+    const secretCodes = ['priest', 'secondcode', 'thirdcode', 'fourthcode', 'fifthcode']; // Custom secret codes for each input
+
+    codeInput.addEventListener('input', function() {
+        if (codeInput.value === secretCodes[0]) {
+            hiddenBoxes[0].style.display = 'block';
+        }
+    });
+
+    nextCodes.forEach((code, index) => {
+        code.addEventListener('input', function() {
+            if (code.value === secretCodes[index + 1]) {
+                hiddenBoxes[index + 1].style.display = 'block';
             }
         });
+    });
+</script>
 
-        nextCodes.forEach((code, index) => {
-            code.addEventListener('input', function() {
-                if (code.value === `code${index + 1}`) {
-                    hiddenBoxes[index + 1].style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
