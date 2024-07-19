@@ -2,37 +2,26 @@
 <html>
 <head>
   <title>Multi-Level Puzzle</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00; /* Matrix green */
+      font-family: monospace;
+    }
+    input, button {
+      background-color: #000;
+      color: #00ff00;
+      border: none;
+      padding: 10px;
+    }
+    button:hover {
+      background-color: #008000; /* Darker green on hover */
+    }
+    p {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
-  <input type="text" id="input1" placeholder="Enter code 1">
-  <button onclick="checkAnswer(1)">Submit</button>
-  <p id="message1" style="display: none;">You got it! Here's the next code:</p>
-
-  <input type="text" id="input2" placeholder="Enter code 2" style="display: none;">
-  <button onclick="checkAnswer(2)" style="display: none;">Submit</button>
-  <p id="message2" style="display: none;">You got it! Here's the final code:</p>
-
-  <script>
-    const codes = ["code1", "code2", "code3", "code4", "code5"]; // Replace with your desired codes
-
-    function checkAnswer(level) {
-      const input = document.getElementById("input" + level).value;
-      const correctAnswer = codes[level - 1];
-
-      if (input === correctAnswer) {
-        document.getElementById("message" + level).style.display = "block";
-        if (level < codes.length) {
-          document.getElementById("input" + (level + 1)).style.display = "block";
-          document.getElementById("message" + (level + 1)).style.display = "none";
-          document.getElementById("input" + level).disabled = true;
-          document.getElementById("input" + (level + 1)).focus();
-        } else {
-          // Final message or action
-        }
-      } else {
-        alert("Incorrect code.");
-      }
-    }
-  </script>
-</body>
+  </body>
 </html>
