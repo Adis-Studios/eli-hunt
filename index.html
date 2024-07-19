@@ -5,33 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Code Challenge</title>
+    <title>Hacker Challenge</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0f0;
+        }
+
+        p {
+            color: #0f0;
+        }
+
+        input[type="text"] {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 5px;
+            margin: 10px;
+            font-family: monospace;
+        }
+
+        textarea {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 5px;
+            margin: 10px;
+            font-family: monospace;
+        }
+
+        .hiddenBox {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to the Secret Code Challenge!</h1>
+    <h1>Welcome to the Hacker Challenge!</h1>
     <p>Type the correct code to reveal the hidden textbox.</p>
 
     <input type="text" id="codeInput" placeholder="Enter code here">
 
     <div id="hiddenBoxes">
-        <div class="hiddenBox" style="display: none;">
+        <div class="hiddenBox">
             <textarea rows="4" cols="50" placeholder="Congratulations! You found the first hidden textbox."></textarea>
             <input type="text" class="nextCode" placeholder="Enter next code here">
         </div>
-        <div class="hiddenBox" style="display: none;">
+        <div class="hiddenBox">
             <textarea rows="4" cols="50" placeholder="Congratulations! You found the second hidden textbox."></textarea>
             <input type="text" class="nextCode" placeholder="Enter next code here">
         </div>
-        <div class="hiddenBox" style="display: none;">
+        <div class="hiddenBox">
             <textarea rows="4" cols="50" placeholder="Congratulations! You found the third hidden textbox."></textarea>
             <input type="text" class="nextCode" placeholder="Enter next code here">
         </div>
-        <div class="hiddenBox" style="display: none;">
+        <div class="hiddenBox">
             <textarea rows="4" cols="50" placeholder="Congratulations! You found the fourth hidden textbox."></textarea>
             <input type="text" class="nextCode" placeholder="Enter next code here">
         </div>
-        <div class="hiddenBox" style="display: none;">
+        <div class="hiddenBox">
             <textarea rows="4" cols="50" placeholder="Congratulations! You found the fifth hidden textbox."></textarea>
         </div>
     </div>
