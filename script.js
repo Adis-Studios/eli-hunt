@@ -1,6 +1,6 @@
 // scripts.js
 const correctMessages = [
-    'message1',
+    'priest',
     'message2',
     'message3',
     'message4',
